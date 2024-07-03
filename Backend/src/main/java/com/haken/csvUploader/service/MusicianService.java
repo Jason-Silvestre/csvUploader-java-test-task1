@@ -7,7 +7,6 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +23,7 @@ public class MusicianService {
 
     private final MusicianRepository repository;
 
-    public Integer uploadMusicians(MultipartFile file) throws IOException {
+    public Integer uploadMusicians (MultipartFile file) throws IOException {
         Set<Musician> musicians = parseCsv(file);
         repository.saveAll(musicians);
         return musicians.size();
@@ -53,3 +52,4 @@ public class MusicianService {
         }
     }
 }
+

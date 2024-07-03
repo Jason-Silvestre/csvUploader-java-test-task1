@@ -1,14 +1,11 @@
-# Use a imagem base do OpenJDK 17
+# Use the OpenJDK 17 base image
 FROM openjdk:17-jdk-slim
 
-# Adicione um argumento para o JAR do aplicativo
-ARG JAR_FILE=build/libs/*.jar
-
-# Copie o JAR do aplicativo para o container
+# Copy the application JAR to the container
 COPY ${JAR_FILE} app.jar
 
-# Exponha a porta que a aplicação irá rodar
+# Expose the port on which the application will run
 EXPOSE 8080
 
-# Comando para rodar a aplicação
+# Command to run the application
 ENTRYPOINT ["java", "-jar", "/app.jar"]

@@ -1,7 +1,21 @@
 services:
-  postgres:
+  app:
+    image: spring-coroutines-essentials:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: r2dbc:postgresql://postgres_new:5432/userdb
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: senha123
+    depends_on:
+      - postgresql
+
+  postgresql:
     image: postgres:latest
-    container_name: postgres
+    container_name: postgres_new
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

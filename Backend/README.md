@@ -13,9 +13,15 @@ docker run -p 8080:8080 my-spring-boot-app
 
 # Steps for using the Docker Compose
 # Build the Spring Boot application image
-docker-compose build
+docker build -t my-spring-boot-app .
+
 
 # Run the containers
 docker-compose up
 With this configuration, the Spring Boot application will run in the springboot-app container and connect to the PostgreSQL database in the postgres container. 
 The application will be accessible at http://localhost:8080.
+
+# Swagger 
+After launching your Spring Boot application, 
+you can access Swagger's interactive documentation at
+http://localhost:8080/swagger-ui/.

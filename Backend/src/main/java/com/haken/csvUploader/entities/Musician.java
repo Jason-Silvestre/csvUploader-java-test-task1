@@ -14,9 +14,12 @@ import lombok.*;
 public class Musician {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
+    @Column(name = "first_name")
     private String firstname;
+    @Column(name = "last_name")
     private String lastname;
+    @Column(name = "age")
     private int age;
 
 }

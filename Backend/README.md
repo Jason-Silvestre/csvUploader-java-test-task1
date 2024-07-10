@@ -1,27 +1,27 @@
 
-Project to show the capability of working with Rest Services, Rest frameworks, database, data processing and searching with CSV files.
+# CsvUploader
+This project was created with the purpose of showing my capability of working with:
 
-# Using Maven
-maven build
+ - Rest Services,
+ - Rest frameworks
+ - Database
+ - Simple data processing and searching with CSV files.
 
-Build the Docker image: Run the command below to build the Docker image:
-docker build -t app
+# Restful API 
+- with 2 HTTP endpoints.
 
-Run the container: After building the image, you can run the container:
+# First endpoint: 
+- uploads the CSV files,
+- parses the files 
+- saves them in the h2 database.
 
-docker run -p 8080:8080 my-spring-boot-app
+# Second endpoint: 
+- searches the parsed CSV data.
 
-# Steps for using the Docker Compose
-# Build the Spring Boot application image
-docker build -t my-spring-boot-app .
+# Delimiters:
+It's supports CSVs with comma, semicolon and dash delimiters.
 
 
-# Run the containers
-docker-compose up
-With this configuration, the Spring Boot application will run in the springboot-app container and connect to the PostgreSQL database in the postgres container. 
-The application will be accessible at http://localhost:8080.
 
-# Swagger 
-After launching your Spring Boot application, 
-you can access Swagger's interactive documentation at
-http://localhost:8080/swagger-ui/.
+
+

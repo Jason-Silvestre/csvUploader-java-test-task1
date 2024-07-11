@@ -1,4 +1,4 @@
-package com.haken.csvUploader.repository;
+package com.haken.csvUploader.repositories;
 
 import com.haken.csvUploader.entities.Musician;
 
